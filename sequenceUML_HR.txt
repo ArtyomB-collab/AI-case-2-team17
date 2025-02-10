@@ -1,0 +1,28 @@
+@startuml
+actor "HR-менеджер" as hr
+participant "Frontend" as front
+participant "Backend" as back
+database "База данных" as db
+
+== Анализ отчетов ==
+hr -> front: Нажать кнопку просмотра профилей сотрудников
+front --> hr: Отображение страницы профилей сотрудников
+hr -> front: Выбрать нужного сотрудника
+front -> back: request(user_id)
+back -> db: Получить данные результатов тестов
+db --> back: Результаты тестирования
+back --> front: response(report_data)
+front --> hr: Отображение отчетов
+
+== Сбор обратной связи ==
+hr -> front: Нажать кнопку "Обратная связь"
+front --> hr: Отображение страницы обратной связи
+hr -> front: Выбрать сотрудника
+hr -> front: Запустить сбор
+front -> back: request(feedback_params, user_id)
+back -> db: Получить сохраненные отзывы
+db --> back: Отзывы
+back -> back: Агрегировать данные
+back --> front: response(feedback)
+front --> hr: Отображение обратной связи по сотруднику
+@enduml

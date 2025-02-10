@@ -1,0 +1,30 @@
+@startuml
+actor Сотрудник as user
+participant "Frontend" as front
+participant "Backend" as back
+database "База данных" as db
+
+== Прохождение тестирования ==
+user -> front: Начать выбранное тестирование
+front --> user : Отображание вопросов теста
+user -> front : Проставить ответы
+user -> front : Завершить тестирование
+front -> back :request(id_test,user_id, mark)
+back -> db :Записать информацию по тестированию
+db --> back :Правильные ответы по тестированию
+back -> back :Проверить ответы тестирования
+back --> front :response(result)
+back --> front :response(education)
+front --> user: Отображение результата тестирования
+front --> user: Отображение предложенного обучения
+
+== Оставление обратной связи ==
+user -> front: нажать на кнопку обратной связи
+front --> user: Отображение страницы обратной связи
+user -> front :Нажал кнопку отправить 
+front -> back :request(user_id, feedback)
+back -> db : Сохранить обратную связь
+db --> back :Успешно
+back --> front :Успешно отправлено
+front --> user :Отображение об успешной отправки обратной связи
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+state "Start: Тестирование не начато" as start
+state "Тестирование в процессе" as testing
+state "Тестирование завершено" as tested
+
+
+[*] --> start
+
+start --> testing : Сотрудник начал тест
+testing --> tested : Сотрудник завершил тест
+@enduml

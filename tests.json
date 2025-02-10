@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "test_id": "TST-101",
+      "title": "Тест по JavaScript",
+      "description": "Базовые знания JavaScript",
+      "competencies": ["JavaScript", "ES6"],
+      "questions": [
+        {
+          "question_id": 1,
+          "text": "Что такое замыкание?",
+          "options": ["Функция", "Объект", "Контекст выполнения"],
+          "correct_answer": 2,
+          "weight": 1.5
+        },
+        {
+          "question_id": 2,
+          "text": "Как работает event loop?",
+          "type": "essay",
+          "max_score": 5
+        }
+      ],
+      "passing_score": 70,
+      "created_by": "ADM-001",
+      "created_at": "2024-03-01"
+    }
+  ]
+}

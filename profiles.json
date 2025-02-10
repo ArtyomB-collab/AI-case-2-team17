@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": "EMP-001",
+      "name": "Иван Петров",
+      "position": "Разработчик",
+      "department": "IT",
+      "competencies": ["JavaScript", "React", "Node.js"],
+      "hire_date": "2020-05-15",
+      "email": "ivan.p@company.com"
+    },
+    {
+      "id": "EMP-002",
+      "name": "Мария Сидорова",
+      "position": "HR-специалист",
+      "department": "HR",
+      "competencies": ["Подбор персонала", "Оценка компетенций"],
+      "hire_date": "2019-11-02",
+      "email": "maria.s@company.com"
+    }
+  ]
+}
